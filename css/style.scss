@@ -1,4 +1,78 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  .game-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    img {
+      width: 100%;
+    }
+    .game {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+      .character,
+      .obstacle {
+        width: 120px;
+        height: 120px;
+        @media (max-height: 414px) {
+          width: 85px;
+          height: 85px;
+        }
+        @media (max-height: 375px) {
+          width: 75px;
+          height: 75px;
+        }
+        @media (max-height: 320px) {
+          width: 65px;
+          height: 65px;
+        }
+      }
+      .character {
+        position: relative;
+        top: 80%;
+        left: 5%;
+        z-index: 1;
+      }
+      .obstacle {
+        position: relative;
+        top: 80%;
+        left: 80%;
+        display: inline-block;
+        animation: obstacle 1.5s infinite linear;
+      }
+      .animate {
+        animation: jump 1s;
+      }
+      @keyframes obstacle {
+        0% {
+          left: 100%;
+        }
+        100% {
+          left: -20%;
+        }
+      }
+      @keyframes jump {
+        0% {
+          top: 80%;
+        }
+        40% {
+          top: 40%;
+        }
+        100% {
+          top: 80%;
+        }
+      }
+    }
+  }
 }

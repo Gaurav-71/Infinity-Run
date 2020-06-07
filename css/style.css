@@ -2,4 +2,119 @@
   margin: 0;
   padding: 0;
 }
+
+body .game-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+body .game-container img {
+  width: 100%;
+}
+
+body .game-container .game {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+body .game-container .game .character,
+body .game-container .game .obstacle {
+  width: 120px;
+  height: 120px;
+}
+
+@media (max-height: 414px) {
+  body .game-container .game .character,
+  body .game-container .game .obstacle {
+    width: 85px;
+    height: 85px;
+  }
+}
+
+@media (max-height: 375px) {
+  body .game-container .game .character,
+  body .game-container .game .obstacle {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media (max-height: 320px) {
+  body .game-container .game .character,
+  body .game-container .game .obstacle {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+body .game-container .game .character {
+  position: relative;
+  top: 80%;
+  left: 5%;
+  z-index: 1;
+}
+
+body .game-container .game .obstacle {
+  position: relative;
+  top: 80%;
+  left: 80%;
+  display: inline-block;
+  -webkit-animation: obstacle 1.5s infinite linear;
+          animation: obstacle 1.5s infinite linear;
+}
+
+body .game-container .game .animate {
+  -webkit-animation: jump 1s;
+          animation: jump 1s;
+}
+
+@-webkit-keyframes obstacle {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -20%;
+  }
+}
+
+@keyframes obstacle {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -20%;
+  }
+}
+
+@-webkit-keyframes jump {
+  0% {
+    top: 80%;
+  }
+  40% {
+    top: 40%;
+  }
+  100% {
+    top: 80%;
+  }
+}
+
+@keyframes jump {
+  0% {
+    top: 80%;
+  }
+  40% {
+    top: 40%;
+  }
+  100% {
+    top: 80%;
+  }
+}
 /*# sourceMappingURL=style.css.map */
