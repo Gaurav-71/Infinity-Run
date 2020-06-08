@@ -14,10 +14,12 @@ body .game-container {
 
 body .game-container img {
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body .game-container .game {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -29,6 +31,8 @@ body .game-container .game .character,
 body .game-container .game .obstacle {
   width: 120px;
   height: 120px;
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-height: 414px) {
@@ -56,19 +60,23 @@ body .game-container .game .obstacle {
 }
 
 body .game-container .game .character {
-  position: relative;
+  position: fixed;
   top: 80%;
   left: 5%;
   z-index: 1;
 }
 
 body .game-container .game .obstacle {
-  position: relative;
+  position: fixed;
   top: 80%;
-  left: 80%;
-  display: inline-block;
-  -webkit-animation: obstacle 1.5s infinite linear;
-          animation: obstacle 1.5s infinite linear;
+  left: 105%;
+  -webkit-animation: obstacle 3s infinite linear;
+          animation: obstacle 3s infinite linear;
+}
+
+body .game-container .game .delay {
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
 }
 
 body .game-container .game .animate {

@@ -1,5 +1,6 @@
 var character = document.getElementById("character");
-var obstacle = document.getElementById("obstacle");
+var obstacle1 = document.getElementById("obstacle1");
+var obstacle2 = document.getElementById("obstacle2");
 const characterGrounded = parseInt(
   window.getComputedStyle(character).getPropertyValue("top")
 );
@@ -20,8 +21,11 @@ var checkDead = setInterval(function () {
   var characterLeft = parseInt(
     window.getComputedStyle(character).getPropertyValue("left")
   );
-  var obstacleLeft = parseInt(
-    window.getComputedStyle(obstacle).getPropertyValue("left")
+  var obstacle1Left = parseInt(
+    window.getComputedStyle(obstacle1).getPropertyValue("left")
+  );
+  var obstacle2Left = parseInt(
+    window.getComputedStyle(obstacle2).getPropertyValue("left")
   );
   var deviceHeight = parseInt(
     window.getComputedStyle(game).getPropertyValue("height")
@@ -41,15 +45,22 @@ var checkDead = setInterval(function () {
     characterGrounded +
     ", characterWidth : " +
     characterWidth +
-    ", obstacleLeft : " +
-    obstacleLeft +
+    ", obstacle1Left : " +
+    obstacle1Left +
+    ", obstacle2Left : " +
+    obstacle2Left +
     ", h : " +
     deviceHeight +
     ", w : " +
     deviceWidth;
-  /*if (obstacleLeft < characterLeft && characterTop >= characterGrounded) {
-    //obstacle.style.animation= "none";
-    //obstacle.style.display ="none";
+  if (
+    (obstacle1Left < characterLeft && obstacle1Left > 10 || obstacle2Left == characterLeft && obstacle2Left > 10) &&
+    characterTop >= characterGrounded
+  ) {
+    obstacle1.style.animation= "none";
+    obstacle1.style.display ="none";
+    obstacle2.style.animation= "none";
+    obstacle2.style.display ="none";
     alert("You Lost !");
-  }*/
-}, 10);
+  }
+}, -1);
