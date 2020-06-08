@@ -6,16 +6,31 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Infinity Run</title>
   </head>
-  <body>
-    <div class="game-container" id="game" onclick="jump()">
+  <body id="game" onclick="jump()">
+    <div class="game-container">
       <img src="images/background.jpg" alt="background" class="background" />
       <div class="game">
-        <img src="images/character.png" alt="character" class="character" id="character" />
-        <img src="images/obstacle.png" alt="obstacle" class="obstacle" id="obstacle1" />
-        <img src="images/obstacle.png" alt="obstacle" class="obstacle delay" id="obstacle2" />
+        <img
+          src="images/character.png"
+          alt="character"
+          class="character"
+          id="character"
+        />
+        <img
+          src="images/obstacle.png"
+          alt="obstacle"
+          class="obstacle"
+          id="obstacle1"
+        />
+        <img
+          src="images/obstacle.png"
+          alt="obstacle"
+          class="obstacle delay"
+          id="obstacle2"
+        />
       </div>
-      <div id="data" style="position: fixed;top: 50%;left: 0;">Position</div>
-    </div>     
+      <!-- <div id="data" style="position: fixed;top: 50%;left: 0;">Position</div> -->
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

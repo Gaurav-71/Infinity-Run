@@ -3,12 +3,28 @@
   padding: 0;
 }
 
+body {
+  overflow: hidden;
+}
+
+@media (max-width: 1440px), (max-width: 1366px), (max-width: 1024px), (max-width: 768px), (max-width: 375px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-image: linear-gradient(45deg, rgba(254, 246, 210, 0.53) 0%, rgba(254, 246, 210, 0.53) 14.286%, rgba(221, 240, 216, 0.53) 14.286%, rgba(221, 240, 216, 0.53) 28.572%, rgba(188, 233, 223, 0.53) 28.572%, rgba(188, 233, 223, 0.53) 42.858%, rgba(156, 227, 229, 0.53) 42.858%, rgba(156, 227, 229, 0.53) 57.144%, rgba(123, 220, 235, 0.53) 57.144%, rgba(123, 220, 235, 0.53) 71.43%, rgba(90, 214, 242, 0.53) 71.43%, rgba(90, 214, 242, 0.53) 85.716%, rgba(57, 207, 248, 0.53) 85.716%, rgba(57, 207, 248, 0.53) 100.002%), linear-gradient(135deg, #f663c8 0%, #f663c8 12.5%, #df62c4 12.5%, #df62c4 25%, #c761c0 25%, #c761c0 37.5%, #b060bc 37.5%, #b060bc 50%, #985fb8 50%, #985fb8 62.5%, #815eb4 62.5%, #815eb4 75%, #695db0 75%, #695db0 87.5%, #525cac 87.5%, #525cac 100%);
+  }
+}
+
 body .game-container {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   z-index: -1;
 }
 
@@ -18,12 +34,14 @@ body .game-container img {
   padding: 0;
 }
 
+@media (max-width: 1440px), (max-width: 1366px), (max-width: 1024px), (max-width: 768px), (max-width: 375px) {
+  body .game-container img {
+    -webkit-box-shadow: 0px 0px 200px black;
+            box-shadow: 0px 0px 200px black;
+  }
+}
+
 body .game-container .game {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   z-index: 0;
 }
 
@@ -35,15 +53,7 @@ body .game-container .game .obstacle {
   padding: 0;
 }
 
-@media (max-height: 414px) {
-  body .game-container .game .character,
-  body .game-container .game .obstacle {
-    width: 85px;
-    height: 85px;
-  }
-}
-
-@media (max-height: 375px) {
+@media (max-width: 812px), (max-width: 375px), (max-width: 414px) {
   body .game-container .game .character,
   body .game-container .game .obstacle {
     width: 75px;
@@ -51,7 +61,15 @@ body .game-container .game .obstacle {
   }
 }
 
-@media (max-height: 320px) {
+@media (max-width: 736px) {
+  body .game-container .game .character,
+  body .game-container .game .obstacle {
+    width: 85px;
+    height: 85px;
+  }
+}
+
+@media (max-width: 568px), (max-width: 320px) {
   body .game-container .game .character,
   body .game-container .game .obstacle {
     width: 65px;
@@ -59,29 +77,143 @@ body .game-container .game .obstacle {
   }
 }
 
-body .game-container .game .character {
+@media (max-width: 1440px), (max-width: 1366px), (max-width: 1024px), (max-width: 768px), (max-width: 375px) {
+  body .game-container .game .character,
+  body .game-container .game .obstacle {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+body .game-container .game .character,
+body .game-container .game .obstacle {
   position: fixed;
   top: 80%;
+}
+
+@media (max-width: 1024px) {
+  body .game-container .game .character,
+  body .game-container .game .obstacle {
+    top: 71%;
+  }
+}
+
+@media (max-width: 812px) {
+  body .game-container .game .character,
+  body .game-container .game .obstacle {
+    top: 79%;
+  }
+}
+
+@media (max-width: 768px) {
+  body .game-container .game .character,
+  body .game-container .game .obstacle {
+    top: 62%;
+  }
+}
+
+@media (max-width: 667px) {
+  body .game-container .game .character,
+  body .game-container .game .obstacle {
+    top: 76%;
+  }
+}
+
+@media (max-width: 568px) {
+  body .game-container .game .character,
+  body .game-container .game .obstacle {
+    top: 79%;
+  }
+}
+
+@media (max-width: 414px) {
+  body .game-container .game .character,
+  body .game-container .game .obstacle {
+    top: 56%;
+  }
+}
+
+@media (max-width: 375px) {
+  body .game-container .game .character,
+  body .game-container .game .obstacle {
+    top: 54%;
+  }
+}
+
+body .game-container .game .character {
   left: 5%;
   z-index: 1;
 }
 
 body .game-container .game .obstacle {
-  position: fixed;
-  top: 80%;
-  left: 105%;
+  left: 100%;
   -webkit-animation: obstacle 3s infinite linear;
           animation: obstacle 3s infinite linear;
 }
 
 body .game-container .game .delay {
-  -webkit-animation-delay: 5s;
-          animation-delay: 5s;
+  -webkit-animation-delay: 7s;
+          animation-delay: 7s;
+}
+
+@media (max-width: 375px), (max-width: 414px) {
+  body .game-container .game .delay {
+    display: none;
+  }
 }
 
 body .game-container .game .animate {
-  -webkit-animation: jump 1s;
-          animation: jump 1s;
+  -webkit-animation: jump 800ms;
+          animation: jump 800ms;
+}
+
+@media (max-width: 1024px) {
+  body .game-container .game .animate {
+    -webkit-animation: jump-ipad-landscape 800ms;
+            animation: jump-ipad-landscape 800ms;
+  }
+}
+
+@media (max-width: 812px) {
+  body .game-container .game .animate {
+    -webkit-animation: jump-iphonex 800ms;
+            animation: jump-iphonex 800ms;
+  }
+}
+
+@media (max-width: 768px) {
+  body .game-container .game .animate {
+    -webkit-animation: jump-ipad 800ms;
+            animation: jump-ipad 800ms;
+  }
+}
+
+@media (max-width: 667px) {
+  body .game-container .game .animate {
+    -webkit-animation: jump-iphone6 800ms;
+            animation: jump-iphone6 800ms;
+  }
+}
+
+@media (max-width: 568px) {
+  body .game-container .game .animate {
+    -webkit-animation: jump-iphonese 800ms;
+            animation: jump-iphonese 800ms;
+  }
+}
+
+@media (max-width: 414px) {
+  body .game-container .game .animate {
+    -webkit-animation: jump-iphone6-vertical 800ms;
+            animation: jump-iphone6-vertical 800ms;
+  }
+}
+
+@media (max-width: 375px) {
+  body .game-container .game .animate {
+    -webkit-animation: jump-iphonex-vertical 800ms;
+            animation: jump-iphonex-vertical 800ms;
+  }
 }
 
 @-webkit-keyframes obstacle {
@@ -123,6 +255,174 @@ body .game-container .game .animate {
   }
   100% {
     top: 80%;
+  }
+}
+
+@-webkit-keyframes jump-iphonex {
+  0% {
+    top: 79%;
+  }
+  40% {
+    top: 30%;
+  }
+  100% {
+    top: 79%;
+  }
+}
+
+@keyframes jump-iphonex {
+  0% {
+    top: 79%;
+  }
+  40% {
+    top: 30%;
+  }
+  100% {
+    top: 79%;
+  }
+}
+
+@-webkit-keyframes jump-iphone6 {
+  0% {
+    top: 76%;
+  }
+  40% {
+    top: 25%;
+  }
+  100% {
+    top: 76%;
+  }
+}
+
+@keyframes jump-iphone6 {
+  0% {
+    top: 76%;
+  }
+  40% {
+    top: 25%;
+  }
+  100% {
+    top: 76%;
+  }
+}
+
+@-webkit-keyframes jump-iphonese {
+  0% {
+    top: 79%;
+  }
+  40% {
+    top: 30%;
+  }
+  100% {
+    top: 79%;
+  }
+}
+
+@keyframes jump-iphonese {
+  0% {
+    top: 79%;
+  }
+  40% {
+    top: 30%;
+  }
+  100% {
+    top: 79%;
+  }
+}
+
+@-webkit-keyframes jump-iphone6-vertical {
+  0% {
+    top: 56%;
+  }
+  40% {
+    top: 35%;
+  }
+  100% {
+    top: 56%;
+  }
+}
+
+@keyframes jump-iphone6-vertical {
+  0% {
+    top: 56%;
+  }
+  40% {
+    top: 35%;
+  }
+  100% {
+    top: 56%;
+  }
+}
+
+@-webkit-keyframes jump-iphonex-vertical {
+  0% {
+    top: 54%;
+  }
+  40% {
+    top: 38%;
+  }
+  100% {
+    top: 54%;
+  }
+}
+
+@keyframes jump-iphonex-vertical {
+  0% {
+    top: 54%;
+  }
+  40% {
+    top: 38%;
+  }
+  100% {
+    top: 54%;
+  }
+}
+
+@-webkit-keyframes jump-ipad {
+  0% {
+    top: 62%;
+  }
+  40% {
+    top: 35%;
+  }
+  100% {
+    top: 62%;
+  }
+}
+
+@keyframes jump-ipad {
+  0% {
+    top: 62%;
+  }
+  40% {
+    top: 35%;
+  }
+  100% {
+    top: 62%;
+  }
+}
+
+@-webkit-keyframes jump-ipad-landscape {
+  0% {
+    top: 71%;
+  }
+  40% {
+    top: 35%;
+  }
+  100% {
+    top: 71%;
+  }
+}
+
+@keyframes jump-ipad-landscape {
+  0% {
+    top: 71%;
+  }
+  40% {
+    top: 35%;
+  }
+  100% {
+    top: 71%;
   }
 }
 /*# sourceMappingURL=style.css.map */

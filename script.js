@@ -11,8 +11,15 @@ function jump() {
   }
   setTimeout(function () {
     character.classList.remove("animate");
-  }, 1000);
+  }, 800);
 }
+
+window.onkeydown = function (event) {
+  if (event.keyCode === 32) {
+    event.preventDefault();
+    jump();
+  }
+};
 
 var checkDead = setInterval(function () {
   var characterTop = parseInt(
@@ -27,40 +34,22 @@ var checkDead = setInterval(function () {
   var obstacle2Left = parseInt(
     window.getComputedStyle(obstacle2).getPropertyValue("left")
   );
-  var deviceHeight = parseInt(
-    window.getComputedStyle(game).getPropertyValue("height")
-  );
-  var deviceWidth = parseInt(
-    window.getComputedStyle(game).getPropertyValue("width")
-  );
   var characterWidth = parseInt(
     window.getComputedStyle(character).getPropertyValue("width")
   );
-  document.getElementById("data").innerHTML =
-    "characterTop : " +
-    characterTop +
-    ", characterLeft : " +
-    characterLeft +
-    ", characterGrounded : " +
-    characterGrounded +
-    ", characterWidth : " +
-    characterWidth +
-    ", obstacle1Left : " +
-    obstacle1Left +
-    ", obstacle2Left : " +
-    obstacle2Left +
-    ", h : " +
-    deviceHeight +
-    ", w : " +
-    deviceWidth;
+  var breakpoint = characterLeft + characterWidth;
   if (
-    (obstacle1Left < characterLeft && obstacle1Left > 10 || obstacle2Left == characterLeft && obstacle2Left > 10) &&
+    ((obstacle1Left < breakpoint && obstacle1Left > characterLeft) ||
+      (obstacle2Left < breakpoint && obstacle2Left > characterLeft)) &&
     characterTop >= characterGrounded
   ) {
-    obstacle1.style.animation= "none";
-    obstacle1.style.display ="none";
-    obstacle2.style.animation= "none";
-    obstacle2.style.display ="none";
-    alert("You Lost !");
+    obstacle1.style.animation = "none";
+    obstacle1.style.display = "none";
+    obstacle2.style.animation = "none";
+    obstacle2.style.display = "none";
+    console.log("you lost");
+    alert("lost");
+    clearInterval(checkDead);
+    location.reload();
   }
-}, -1);
+}, 0);
