@@ -37,11 +37,19 @@ var checkDead = setInterval(function () {
   var characterWidth = parseInt(
     window.getComputedStyle(character).getPropertyValue("width")
   );
-  var breakpoint = characterLeft + characterWidth;
+  var characterHeight = parseInt(
+    window.getComputedStyle(character).getPropertyValue("height")
+  );
+  var obstacleWidth = parseInt(
+    window.getComputedStyle(obstacle1).getPropertyValue("width")
+  );
+  var breakpointStart = characterLeft + (characterWidth*0.75);
+  var breakpointEnd =  characterLeft - (obstacleWidth*0.80);
+  var breakpointGround = characterGrounded - (characterHeight*0.50);
   if (
-    ((obstacle1Left < breakpoint && obstacle1Left > characterLeft) ||
-      (obstacle2Left < breakpoint && obstacle2Left > characterLeft)) &&
-    characterTop >= characterGrounded
+    ((obstacle1Left < breakpointStart && obstacle1Left > breakpointEnd) ||
+      (obstacle2Left < breakpointStart && obstacle2Left > breakpointEnd)) &&
+    characterTop >= breakpointGround
   ) {
     obstacle1.style.animation = "none";
     obstacle1.style.display = "none";

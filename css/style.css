@@ -51,6 +51,8 @@ body .game-container .game .obstacle {
   height: 120px;
   margin: 0;
   padding: 0;
+  position: fixed;
+  top: 80%;
 }
 
 @media (max-width: 812px), (max-width: 375px), (max-width: 414px) {
@@ -83,12 +85,6 @@ body .game-container .game .obstacle {
     -webkit-box-shadow: none;
             box-shadow: none;
   }
-}
-
-body .game-container .game .character,
-body .game-container .game .obstacle {
-  position: fixed;
-  top: 80%;
 }
 
 @media (max-width: 1024px) {

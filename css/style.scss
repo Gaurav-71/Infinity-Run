@@ -74,6 +74,8 @@ body {
         height: 120px;
         margin: 0;
         padding: 0;
+        position: fixed;
+        top: 80%;
         @media (max-width: 812px), (max-width: 375px), (max-width: 414px) {
           width: 75px;
           height: 75px;
@@ -93,11 +95,6 @@ body {
           (max-width: 375px) {
           box-shadow: none;
         }
-      }
-      .character,
-      .obstacle {
-        position: fixed;
-        top: 80%;
         @media (max-width: 1024px) {
           top: 71%;
         }
