@@ -70,6 +70,10 @@ function resetTracker(breakpoint) {
   }
 }
 
+function resetGame() {
+  window.location.reload();
+}
+
 var checkDead = setInterval(function () {
   var characterTop = parseInt(
     window.getComputedStyle(character).getPropertyValue("top")
@@ -140,10 +144,20 @@ var checkDead = setInterval(function () {
     obstacle1.style.display = "none";
     obstacle2.style.animation = "none";
     obstacle2.style.display = "none";
-    console.log("you lost");
-    alert("lost");
+    powerup1.style.animation = "none";
+    powerup2.style.animation = "none";
+    powerup3.style.animation = "none";
+    powerup4.style.animation = "none";
+    powerup5.style.animation = "none";
+    powerup6.style.animation = "none";
+    powerup7.style.animation = "none";
+    powerup8.style.animation = "none";
+    powerup9.style.animation = "none";
+    powerup10.style.animation = "none";
+    powerup11.style.animation = "none";
     clearInterval(checkDead);
-    location.reload();
+    document.getElementById("modal").style.display = "block";
+    document.getElementById("finalScore").innerHTML = "Score : " + score;
   }
   if (obstacle1Left == 0) {
     resetTracker(1);
@@ -272,5 +286,5 @@ var checkDead = setInterval(function () {
     powerup11.style.visibility = "hidden";
     tracker(10);
   }
-  document.getElementById("data").innerHTML = "Score : " + score;
+  document.getElementById("score").innerHTML = "Score : " + score;
 }, 0);

@@ -1,3 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+$background: linear-gradient(
+    45deg,
+    rgba(254, 246, 210, 0.53) 0%,
+    rgba(254, 246, 210, 0.53) 14.286%,
+    rgba(221, 240, 216, 0.53) 14.286%,
+    rgba(221, 240, 216, 0.53) 28.572%,
+    rgba(188, 233, 223, 0.53) 28.572%,
+    rgba(188, 233, 223, 0.53) 42.858%,
+    rgba(156, 227, 229, 0.53) 42.858%,
+    rgba(156, 227, 229, 0.53) 57.144%,
+    rgba(123, 220, 235, 0.53) 57.144%,
+    rgba(123, 220, 235, 0.53) 71.42999999999999%,
+    rgba(90, 214, 242, 0.53) 71.43%,
+    rgba(90, 214, 242, 0.53) 85.71600000000001%,
+    rgba(57, 207, 248, 0.53) 85.716%,
+    rgba(57, 207, 248, 0.53) 100.002%
+  ),
+  linear-gradient(
+    135deg,
+    rgb(246, 99, 200) 0%,
+    rgb(246, 99, 200) 12.5%,
+    rgb(223, 98, 196) 12.5%,
+    rgb(223, 98, 196) 25%,
+    rgb(199, 97, 192) 25%,
+    rgb(199, 97, 192) 37.5%,
+    rgb(176, 96, 188) 37.5%,
+    rgb(176, 96, 188) 50%,
+    rgb(152, 95, 184) 50%,
+    rgb(152, 95, 184) 62.5%,
+    rgb(129, 94, 180) 62.5%,
+    rgb(129, 94, 180) 75%,
+    rgb(105, 93, 176) 75%,
+    rgb(105, 93, 176) 87.5%,
+    rgb(82, 92, 172) 87.5%,
+    rgb(82, 92, 172) 100%
+  );
+
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +44,8 @@
 
 body {
   overflow: hidden;
+  font-family: "Press Start 2P", cursive;
+  font-weight: lighter;
   @media (max-width: 1440px),
     (max-width: 1366px),
     (max-width: 1024px),
@@ -15,54 +56,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(
-        45deg,
-        rgba(254, 246, 210, 0.53) 0%,
-        rgba(254, 246, 210, 0.53) 14.286%,
-        rgba(221, 240, 216, 0.53) 14.286%,
-        rgba(221, 240, 216, 0.53) 28.572%,
-        rgba(188, 233, 223, 0.53) 28.572%,
-        rgba(188, 233, 223, 0.53) 42.858%,
-        rgba(156, 227, 229, 0.53) 42.858%,
-        rgba(156, 227, 229, 0.53) 57.144%,
-        rgba(123, 220, 235, 0.53) 57.144%,
-        rgba(123, 220, 235, 0.53) 71.42999999999999%,
-        rgba(90, 214, 242, 0.53) 71.43%,
-        rgba(90, 214, 242, 0.53) 85.71600000000001%,
-        rgba(57, 207, 248, 0.53) 85.716%,
-        rgba(57, 207, 248, 0.53) 100.002%
-      ),
-      linear-gradient(
-        135deg,
-        rgb(246, 99, 200) 0%,
-        rgb(246, 99, 200) 12.5%,
-        rgb(223, 98, 196) 12.5%,
-        rgb(223, 98, 196) 25%,
-        rgb(199, 97, 192) 25%,
-        rgb(199, 97, 192) 37.5%,
-        rgb(176, 96, 188) 37.5%,
-        rgb(176, 96, 188) 50%,
-        rgb(152, 95, 184) 50%,
-        rgb(152, 95, 184) 62.5%,
-        rgb(129, 94, 180) 62.5%,
-        rgb(129, 94, 180) 75%,
-        rgb(105, 93, 176) 75%,
-        rgb(105, 93, 176) 87.5%,
-        rgb(82, 92, 172) 87.5%,
-        rgb(82, 92, 172) 100%
-      );
+    background-image: $background;
   }
   .game-container {
     z-index: -1;
+    video,
     img {
       width: 100%;
       margin: 0;
       padding: 0;
-      @media (max-width: 1440px),
-        (max-width: 1366px),
-        (max-width: 1024px),
-        (max-width: 768px),
-        (max-width: 375px) {
+      @media (max-width: 1440px) {
         box-shadow: 0px 0px 200px black;
       }
     }
@@ -95,11 +98,14 @@ body {
           (max-width: 375px) {
           box-shadow: none;
         }
+        @media (max-width: 1112px) {
+          top: 69%;
+        }
         @media (max-width: 1024px) {
           top: 71%;
         }
-        @media (max-width: 869px) {
-          top: 70.5%;
+        @media (max-width: 991px) {
+          top: 65.5%;
         }
         @media (max-width: 812px) {
           top: 79%;
@@ -144,12 +150,11 @@ body {
         top: 80%;
         left: 100%;
         display: block;
-        @media (max-width: 1440px),
-          (max-width: 1366px),
-          (max-width: 1024px),
-          (max-width: 768px),
-          (max-width: 375px) {
+        @media (max-width: 1440px) {
           box-shadow: none;
+        }
+        @media (max-width: 1112px) {
+          width: 50px;
         }
         @media (max-width: 869px) {
           width: 30px;
@@ -178,8 +183,14 @@ body {
           width: 15px;
           padding-top: 1rem;
         }
+        @media (max-width: 1112px) {
+          top: 69%;
+        }
         @media (max-width: 1024px) {
           top: 71%;
+        }
+        @media (max-width: 991px) {
+          top: 66%;
         }
         @media (max-width: 812px) {
           top: 79%;
@@ -245,8 +256,14 @@ body {
       }
       .animate {
         animation: jump 800ms;
+        @media (max-width: 1112px) {
+          animation: jump-ipad-air 800ms;
+        }
         @media (max-width: 1024px) {
           animation: jump-ipad-landscape 800ms;
+        }
+        @media (max-width: 991px) {
+          animation: jump-ipad-air-landscape 800ms;
         }
         @media (max-width: 869px) {
           animation: jump-oneplus 800ms;
@@ -397,6 +414,106 @@ body {
           top: 71%;
         }
       }
+      @keyframes jump-ipad-air {
+        0% {
+          top: 69%;
+        }
+        40% {
+          top: 35%;
+        }
+        100% {
+          top: 69%;
+        }
+      }
+      @keyframes jump-ipad-air-landscape {
+        0% {
+          top: 65.5%;
+        }
+        40% {
+          top: 35%;
+        }
+        100% {
+          top: 65.5%;
+        }
+      }
+    }
+    .score {
+      position: fixed;
+      top: 5%;
+      right: 3%;
+      font-size: medium;
+      color: white;
+      @media (max-width: 869px) {
+        font-size: small;
+      }
+    }
+  }
+}
+
+section {
+  display: none;
+}
+
+.rotate {
+  display: none;
+  @media (max-width: 414px) {
+    display: block;
+    position: fixed;
+    bottom: 2%;
+    text-align: center;
+    line-height: 25px;
+    img {
+      width: 45px;
+      margin: 1rem;
+    }
+    h3 {
+      font-size: small;
+      font-weight: lighter;
+      padding: 0.6rem;
+    }
+  }
+}
+
+.modal-container {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  .modal {
+    background: black;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 2rem;
+    img {
+      width: 200px;
+    }
+    h3 {
+      font-size: small;
+      color: white;
+      margin: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    a {
+      background-image: $background;
+      padding: 1rem;
+      border-radius: 1rem;
+      text-decoration: none;
+      font-size: x-small;
+      cursor: pointer;
+      color: black;
+    }
+    a:hover {
+      color: black;
+    }
+    a:active {
+      transform: scale(0.95);
     }
   }
 }
