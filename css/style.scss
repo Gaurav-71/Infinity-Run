@@ -54,7 +54,7 @@ body {
     justify-content: center;
     background-image: $background;
   }
-  .game-container {
+  .game-container {    
     @media (max-width: 420px) {
       display: none;
     }
@@ -95,13 +95,13 @@ body {
             box-shadow: none;
           }
           @media (max-width: 1112px) {
-            top: 69%;
+            top: 71%;
           }
           @media (max-width: 1024px) {
             top: 71%;
           }
           @media (max-width: 991px) {
-            top: 65.5%;
+            top: 60.5%;
           }
           @media (max-width: 869px) {
             top: 75%;
@@ -146,7 +146,11 @@ body {
           @media (max-width: 1112px) {
             width: 50px;
           }
+          @media( max-width: 991px){
+          padding-top: 0;
+          }
           @media (max-width: 869px) {
+            padding-top: 3rem;
             width: 30px;
           }
           @media (max-width: 812px) {
@@ -164,7 +168,10 @@ body {
             top: 71%;
           }
           @media (max-width: 991px) {
-            top: 66%;
+            top: 64%;
+          }
+          @media (max-width: 869px) {
+            top: 69%;
           }
           @media (max-width: 812px) {
             top: 79%;
@@ -347,24 +354,24 @@ body {
         }
         @keyframes jump-ipad-air {
           0% {
-            top: 69%;
+            top: 71%;
           }
           40% {
             top: 35%;
           }
           100% {
-            top: 69%;
+            top: 71%;
           }
         }
         @keyframes jump-ipad-air-landscape {
           0% {
-            top: 65.5%;
+            top: 60.5%;
           }
           40% {
             top: 35%;
           }
           100% {
-            top: 65.5%;
+            top: 60.5%;
           }
         }
       }

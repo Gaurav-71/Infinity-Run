@@ -103,7 +103,7 @@ body {
 @media (min-width: 414px) and (max-width: 1112px) {
   body .game-container .game .character,
   body .game-container .game .obstacle {
-    top: 69%;
+    top: 71%;
   }
 }
 
@@ -117,7 +117,7 @@ body {
 @media (min-width: 414px) and (max-width: 991px) {
   body .game-container .game .character,
   body .game-container .game .obstacle {
-    top: 65.5%;
+    top: 60.5%;
   }
 }
 
@@ -201,8 +201,15 @@ body {
   }
 }
 
+@media (min-width: 414px) and (max-width: 991px) {
+  body .game-container .game .powerup {
+    padding-top: 0;
+  }
+}
+
 @media (min-width: 414px) and (max-width: 869px) {
   body .game-container .game .powerup {
+    padding-top: 3rem;
     width: 30px;
   }
 }
@@ -235,7 +242,13 @@ body {
 
 @media (min-width: 414px) and (max-width: 991px) {
   body .game-container .game .powerup {
-    top: 66%;
+    top: 64%;
+  }
+}
+
+@media (min-width: 414px) and (max-width: 869px) {
+  body .game-container .game .powerup {
+    top: 69%;
   }
 }
 
@@ -585,46 +598,46 @@ body {
   }
   @-webkit-keyframes jump-ipad-air {
     0% {
-      top: 69%;
+      top: 71%;
     }
     40% {
       top: 35%;
     }
     100% {
-      top: 69%;
+      top: 71%;
     }
   }
   @keyframes jump-ipad-air {
     0% {
-      top: 69%;
+      top: 71%;
     }
     40% {
       top: 35%;
     }
     100% {
-      top: 69%;
+      top: 71%;
     }
   }
   @-webkit-keyframes jump-ipad-air-landscape {
     0% {
-      top: 65.5%;
+      top: 60.5%;
     }
     40% {
       top: 35%;
     }
     100% {
-      top: 65.5%;
+      top: 60.5%;
     }
   }
   @keyframes jump-ipad-air-landscape {
     0% {
-      top: 65.5%;
+      top: 60.5%;
     }
     40% {
       top: 35%;
     }
     100% {
-      top: 65.5%;
+      top: 60.5%;
     }
   }
   body .game-container .score {
